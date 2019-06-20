@@ -3,6 +3,12 @@
 	"displayName": "VS Code plugin for Odoo development",
 	"description": "",
 	"version": "0.0.2",
+	"icon": "./images/icon.png",
+	"repository": {
+        "type": "git",
+        "url": "https://github.com/woopzz/odoo-code"
+	},
+    "vpublisher": "woopzz",
 	"engines": {
 		"vscode": "^1.35.0"
 	},
