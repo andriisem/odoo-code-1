@@ -1,6 +1,6 @@
 {
 	"name": "odoo-code",
-	"displayName": "odoo-code",
+	"displayName": "VS Code plugin for Odoo development",
 	"description": "",
 	"version": "0.0.1",
 	"engines": {
