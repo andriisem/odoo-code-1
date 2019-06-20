@@ -2,11 +2,12 @@
 	"name": "odoo-code",
 	"displayName": "VS Code plugin for Odoo development",
 	"description": "",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.35.0"
 	},
 	"categories": [
+		"Snippets",
 		"Other"
 	],
 	"activationEvents": [
@@ -18,6 +19,16 @@
 			{
 				"command": "extension.helloWorld",
 				"title": "Hello World"
+			}
+		],
+		"snippets": [
+			{
+				"language": "python",
+				"path": "./snippets/python.json"
+			},
+			{
+				"language": "xml",
+				"path": "./snippets/xml.json"
 			}
 		]
 	},

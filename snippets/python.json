@@ -1,0 +1,51 @@
+{
+	"UTF-8": {
+		"prefix": "utf8",
+		"body": [
+			"# -*- coding: utf-8 -*-"
+		],
+		"description": "utf-8 coding"
+	},
+	"Odoo Manifest": {
+		"prefix": "omanifest",
+		"body": [
+			"{",
+			"\t'name': '$0',",
+			"",
+			"\t'summary': '',",
+			"",
+			"\t'description': '',",
+			"",
+			"\t'version': '1.0',",
+			"\t'category': 'Print Category here',",
+			"\t'author': 'ERP Ukraine',",
+			"\t'website': 'https://erp.co.ua',",
+			"\t'support': 'support@erp.co.ua',",
+			"\t'license': 'OPL-1',",
+			"\t'auto_install': False,",
+			"\t'installable': True,",
+			"\t'application': True,",
+			"",
+			"\t'depends': [],",
+			"",
+			"\t'data': [],",
+			"}"
+		],
+		"description": "odoo manifest"
+	},
+	"Odoo Model": {
+		"prefix": "omodel",
+		"body": [
+			"class $1(models.Model):",
+			"\t_inherit = '$0'"
+		],
+		"description": "odoo model"
+	},
+	"Odoo Field": {
+		"prefix": "ofield",
+		"body": [
+			"$1 = fields.$2($0)"
+		],
+		"description": "odoo field"
+	}
+}
