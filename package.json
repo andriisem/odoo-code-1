@@ -17,14 +17,14 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:odoo-code.changeWorkspace"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "odoo-code.changeWorkspace",
+				"title": "Change workspace"
 			}
 		],
 		"snippets": [
@@ -36,7 +36,18 @@
 				"language": "xml",
 				"path": "./snippets/xml.json"
 			}
-		]
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Workspace selector configuration",
+			"properties": {
+				"odoo-code.paths": {
+					"type": "array",
+					"default": [],
+					"description": "Path to folders that contain workspace files"
+				}
+			}
+		}
 	},
 	"scripts": {
 		"postinstall": "node ./node_modules/vscode/bin/install",

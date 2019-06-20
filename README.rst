@@ -10,6 +10,17 @@ Features for Odoo development
 Features
 ========
 
+Workspace selector
+------------------
+
+Workspace selector for Visual Studio Code. Usefull in case of multiproject
+work. You can move between projects with minimal efforts via command palette.
+Set path to folders with workspace files in the settings (*odoo-code.paths*).
+On the command palette, exists a new menuitem *Change workspace*.
+It suggests you to choose a workspace and open it in current window.
+
+.. image:: images/workflow.gif
+
 Snippets
 ========
 
@@ -29,4 +40,6 @@ Snippets
 Extension Settings
 ==================
 
-No settings yet ...
+This extension contributes the following settings:
+
+* `odoo-code.paths`: path to folder which contains workspace files
