@@ -42,4 +42,4 @@ Extension Settings
 
 This extension contributes the following settings:
 
-* `odoo-code.paths`: path to folder which contains workspace files
+* `odoo-code.workspace-paths`: path to folder which contains workspace files

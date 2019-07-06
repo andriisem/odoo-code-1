@@ -39,9 +39,9 @@
 		],
 		"configuration": {
 			"type": "object",
-			"title": "Workspace selector configuration",
+			"title": "Extension for Odoo dev",
 			"properties": {
-				"odoo-code.paths": {
+				"odoo-code.workspace-paths": {
 					"type": "array",
 					"default": [],
 					"description": "Path to folders that contain workspace files"

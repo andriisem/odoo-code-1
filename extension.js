@@ -22,7 +22,7 @@ module.exports = {
 
 function wsselector () {
 	const wsselector_conf = vscode.workspace.getConfiguration('odoo-code');
-	const workspace_folders = wsselector_conf.get('paths') || [];
+	const workspace_folders = wsselector_conf.get('workspace-paths') || [];
 	if (!workspace_folders) {
 		vscode.window.showErrorMessage('You have to set paths to workspaces in settings!');
 		return;
