@@ -28,6 +28,7 @@ function wsselector () {
 
 	const items = [];
 	workspace_folders.forEach(function (path) {
+		if (!fs.existsSync(path)) return;
 		fs.readdirSync(path)
 			.filter(file => file.endsWith('.code-workspace'))
 			.forEach(file => items.push({
