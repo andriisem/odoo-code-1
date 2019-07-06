@@ -1,11 +1,12 @@
 const fs = require('fs');
 const vscode = require('vscode');
+const child_process = require('child_process');
 
 function activate(context) {
 	console.log('Congratulations, your extension "odoo-code" is now active!');
-
 	context.subscriptions.push(vscode.commands.registerCommand('odoo-code.changeWorkspace', wsselector));
-	context.subscriptions.push(vscode.commands.registerCommand('odoo-code.openTerminal', openTerminal,));
+	context.subscriptions.push(vscode.commands.registerCommand('odoo-code.openTerminal', openTerminal));
+	context.subscriptions.push(vscode.commands.registerCommand('odoo-code.breakIntoContainer', breakIntoContainer));
 }
 exports.activate = activate;
 
@@ -15,8 +16,6 @@ module.exports = {
 	activate,
 	deactivate
 }
-
-/* custom functions */
 
 function wsselector () {
 	const wsselector_conf = vscode.workspace.getConfiguration('odoo-code');
@@ -51,4 +50,38 @@ function openTerminal () {
 
 	const options = {'name': 'Base', 'cwd': cwd};
 	vscode.window.createTerminal(options).show();
+}
+
+function breakIntoContainer () {
+	child_process.exec('docker ps --format "{{.ID}}:{{.Names}}"', (error, stdout, stderr) => {
+		if (error) {
+			vscode.window.showErrorMessage(`error while "docker ps": ${error}`);
+			return;
+		}
+
+		if (!stdout) {
+			vscode.window.showErrorMessage(`No active containers run!`);
+			return;
+		}
+
+		const quickPickItems = [];
+		const reducer = function (acum, item) {
+			const pair = item.split(':');
+			acum[pair[1]] = pair[0];
+			quickPickItems.push({label: pair[1]});
+			return acum;
+		};
+		let containers = stdout.split('\n').filter(Boolean).reduce(reducer, {});
+
+		vscode.window.showQuickPick(quickPickItems, {}).then(item => {
+			if (item) {
+				const options = {
+					'name': item,
+					shellPath: 'docker',
+					shellArgs: ['exec', '-itu', '0', `${containers[item.label]}`, '/bin/bash'],
+				}
+				vscode.window.createTerminal(options).show();
+			}
+		});
+	});
 }

@@ -18,7 +18,8 @@
 	],
 	"activationEvents": [
 		"onCommand:odoo-code.changeWorkspace",
-		"onCommand:odoo-code.openTerminal"
+		"onCommand:odoo-code.openTerminal",
+		"onCommand:odoo-code.breakIntoContainer"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -30,6 +31,10 @@
 			{
 				"command": "odoo-code.openTerminal",
 				"title": "terminal in base folder"
+			},
+			{
+				"command": "odoo-code.breakIntoContainer",
+				"title": "break into container"
 			}
 		],
 		"snippets": [
