@@ -5,15 +5,12 @@ function activate(context) {
 
 	console.log('Congratulations, your extension "odoo-code" is now active!');
 
-	// wsselector - open workspace in easy way
 	const changeWorkspace = vscode.commands.registerCommand('odoo-code.changeWorkspace', wsselector);
 
-	// make changeWorkspace command able to work
 	context.subscriptions.push(changeWorkspace);
 }
 exports.activate = activate;
 
-// there is no special tasks to do on deactivate
 function deactivate() {}
 
 module.exports = {
@@ -21,7 +18,7 @@ module.exports = {
 	deactivate
 }
 
-/* other functions */
+/* custom functions */
 
 function wsselector () {
 	const wsselector_conf = vscode.workspace.getConfiguration('odoo-code');
