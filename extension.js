@@ -2,12 +2,10 @@ const fs = require('fs');
 const vscode = require('vscode');
 
 function activate(context) {
-
 	console.log('Congratulations, your extension "odoo-code" is now active!');
 
-	const changeWorkspace = vscode.commands.registerCommand('odoo-code.changeWorkspace', wsselector);
-
-	context.subscriptions.push(changeWorkspace);
+	context.subscriptions.push(vscode.commands.registerCommand('odoo-code.changeWorkspace', wsselector));
+	context.subscriptions.push(vscode.commands.registerCommand('odoo-code.openTerminal', openTerminal,));
 }
 exports.activate = activate;
 
@@ -44,4 +42,12 @@ function wsselector () {
 			vscode.commands.executeCommand('vscode.openFolder', uri);
 		}
 	});
+}
+
+function openTerminal () {
+	const wsselector_conf = vscode.workspace.getConfiguration('odoo-code');
+	const cwd = wsselector_conf.get('base-path') || './';
+
+	const options = {'name': 'Base', 'cwd': cwd};
+	vscode.window.createTerminal(options).show();
 }
