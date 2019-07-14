@@ -39,6 +39,7 @@ Snippets
     + `omanifest`: base `__manifest.py__` template
     + `omodel`: for extension **odoo.models.Model**
     + `ofield`: for creating **odoo.fields**
+    + `oimport`: import common used odoo modules: _, api, fields, models
 * xml files:
     + `oxml`: xml declaration and odoo tag
     + `oxpath`: xpath tag
