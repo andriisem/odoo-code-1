@@ -47,5 +47,12 @@
 			"$1 = fields.$2($0)"
 		],
 		"description": "odoo field"
+	},
+	"Odoo Imports": {
+		"prefix": "oimport",
+		"body": [
+			"from odoo import _, api, fields, models"
+		],
+		"description": "odoo imports"
 	}
 }
