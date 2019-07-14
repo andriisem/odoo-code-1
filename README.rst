@@ -15,11 +15,21 @@ Workspace selector
 
 Workspace selector for Visual Studio Code. Usefull in case of multiproject
 work. You can move between projects with minimal efforts via command palette.
-Set path to folders with workspace files in the settings (*odoo-code.paths*).
+Set path to folders with workspace files in the settings (odoo-code.workspace-paths_).
 On the command palette, exists a new menuitem *Change workspace*.
 It suggests you to choose a workspace and open it in current window.
 
 .. image:: images/workflow.gif
+
+Break into container
+--------------------
+
+Do the same thing as `Docker Containers: Attach Shell` ... but shell will be opened for **root** user.
+
+Open terminal in base folder
+----------------------------
+
+Open a new terminal with name **Base** into odoo-code.base-path_ folder.
 
 Snippets
 ========
@@ -42,4 +52,10 @@ Extension Settings
 
 This extension contributes the following settings:
 
-* `odoo-code.workspace-paths`: path to folder which contains workspace files
+.. _odoo-code.workspace-paths:
+
+* `odoo-code.workspace-paths`: path to folders which contains workspace files
+
+.. _odoo-code.base-path:
+
+* `odoo-code.base-path`: path to a folder which will be opened in terminal by command `terminal in base folder`
