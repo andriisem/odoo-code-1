@@ -2,8 +2,8 @@
 	"Odoo XML": {
 		"prefix": "oxml",
 		"body": [
-			"<?xml version='1.0' encoding='utf-8'?><odoo>",
-			"",
+			"<?xml version='1.0' encoding='utf-8'?>",
+			"<odoo>",
 			"$0",
 			"",
 			"</odoo>"
